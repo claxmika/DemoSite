@@ -13,14 +13,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features = "Feature",
 tags = {"@successful"},
 snippets = SnippetType.CAMELCASE,
-plugin = { "html:target/cucumber-html-report",
-        "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt", "junit:target/cucumber-results.xml" }
+plugin = {"pretty:target/cucumber-pretty.txt", "html:target/cucumber-html-report", "json:target/cucumber.json", 
+		"junit:target/cucumber-results.xml" }
 )
 public class Test_Runner {
-	 @AfterClass
-	    public static void setup() {
-	        ExtentReporter.setConfig("Feature/config.xml");
-	        ExtentReporter.setSystemInfo("Browser", "Firefox");
-	        ExtentReporter.setSystemInfo("Selenium", "v3.7.1");
-	    }
+
 }
